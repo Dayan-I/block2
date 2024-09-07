@@ -5,13 +5,15 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionUtil {
-    // реализуйте настройку соединения с БД
+    public static final String DB_URL = "jdbc:postgresql://localhost:5432/postgres";
+    public static final String DB_USER = "postgres";
+    public static final String DB_PASSWORD = "root";
 
-    public Connection getConnection(){
+    public Connection getConnection() {
         Connection connection;
-        try{ Class.forName("org.postgresql.Driver");
-            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "root");
-            System.out.println("Connection is OK");
+        try {
+            Class.forName("org.postgresql.Driver");
+            connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
 
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Connection ERROR");
@@ -19,5 +21,9 @@ public class ConnectionUtil {
 
         }
         return connection;
+    }
+
+    public void closeConnection(Connection connection) throws SQLException {
+        connection.close();
     }
 }

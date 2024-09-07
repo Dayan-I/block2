@@ -1,7 +1,6 @@
 package ru.vagapov.userapi.service;
 
 import ru.vagapov.userapi.entity.UserEntity;
-
 import java.time.LocalDate;
 import java.util.List;
 
