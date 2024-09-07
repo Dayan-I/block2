@@ -21,9 +21,8 @@ dependencies {
     implementation("org.postgresql:postgresql:42.2.8")
     implementation("org.hibernate:hibernate-core:6.5.2.Final")
     implementation("org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final")
-
     testImplementation("junit:junit:4.13.2")
-
+    implementation ("org.apache.commons:commons-collections4:4.4")
 }
 
 tasks {
