@@ -3,6 +3,7 @@ package ru.vagapov.userapi;
 import org.junit.Assert;
 import org.junit.Test;
 import ru.vagapov.userapi.dao.Impl.UserDaoJDBCImpl;
+import ru.vagapov.userapi.dao.Impl.UserHibernateDaoImpl;
 import ru.vagapov.userapi.dao.UserDao;
 import ru.vagapov.userapi.entity.UserEntity;
 import ru.vagapov.userapi.service.UserService;
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class UserApiApplicationTests {
 
-    private final UserDao userDao = new UserDaoJDBCImpl();
+    private final UserDao userDao = new UserHibernateDaoImpl();
     private final UserService userService = new UserServiceImpl(userDao);
 
     private final String testFirstName = "Ivan";

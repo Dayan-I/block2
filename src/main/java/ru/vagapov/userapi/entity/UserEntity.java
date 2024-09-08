@@ -6,40 +6,27 @@ import java.time.OffsetDateTime;
 /**
  * Данные по пользователю
  */
-@Table
+@Entity
+@Table (name = "users")
 public class UserEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /**
-     * Имя
-     */
-    @Column
+    @Column(name = "firstName")
     private String firstName;
 
-    /**
-     * Фамилия
-     */
-    @Column
+    @Column(name = "lastName")
     private String lastName;
 
-    /**
-     * День рождения
-     */
-    @Column
+    @Column(name = "birthDate")
     private OffsetDateTime birthDate;
 
-    /**
-     * Место рождения
-     */
-    @Column
+    @Column(name = "birthPlace")
     private String birthPlace;
 
-    /**
-     * Место рождения
-     */
-    @Column
+    @Column(name = "age")
     private Byte age;
 
     public UserEntity(Long id,
