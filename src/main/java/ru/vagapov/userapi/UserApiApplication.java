@@ -44,8 +44,8 @@ public class UserApiApplication {
         for (UserEntity u : userService.getAllUsers()) {
             System.out.println(u);
         }
-        userService.cleanUsersTable();
-        userService.dropUsersTable();
+        //userService.cleanUsersTable();
+        //userService.dropUsersTable();
     }
 
 }

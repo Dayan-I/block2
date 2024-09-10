@@ -89,7 +89,7 @@ public class UserDaoJDBCImpl implements UserDao {
                 user.setId(resultSet.getLong(1));
                 user.setFirstName(resultSet.getString(2));
                 user.setLastName(resultSet.getString(3));
-                user.setBirthDate(OffsetDateTime.ofInstant(Instant.ofEpochMilli(resultSet.getDate(4).getTime()), ZoneId.of("UTC")));
+                user.setBirthDate(resultSet.getDate(4).toLocalDate());
                 user.setBirthPlace(resultSet.getString(5));
                 user.setAge((byte) resultSet.getInt(6));
                 userList.add(user);

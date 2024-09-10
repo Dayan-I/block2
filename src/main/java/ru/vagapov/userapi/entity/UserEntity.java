@@ -1,6 +1,13 @@
 package ru.vagapov.userapi.entity;
 
 import jakarta.persistence.*;
+import jakarta.persistence.Table;
+import org.hibernate.annotations.*;
+import org.hibernate.type.SqlTypes;
+
+import java.sql.Date;
+import java.sql.SQLData;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 
 /**
@@ -20,8 +27,9 @@ public class UserEntity {
     @Column(name = "lastName")
     private String lastName;
 
+
     @Column(name = "birthDate")
-    private OffsetDateTime birthDate;
+    private LocalDate birthDate;
 
     @Column(name = "birthPlace")
     private String birthPlace;
@@ -32,7 +40,7 @@ public class UserEntity {
     public UserEntity(Long id,
                       String firstName,
                       String lastName,
-                      OffsetDateTime birthDate,
+                      LocalDate birthDate,
                       String birthPlace,
                       Byte age) {
         this.id = id;
@@ -70,11 +78,11 @@ public class UserEntity {
         this.lastName = lastName;
     }
 
-    public OffsetDateTime getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(OffsetDateTime birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
